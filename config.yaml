@@ -1,0 +1,23 @@
+paths:
+  docs: "./datasets/"
+  index: "./faiss_index"
+
+index:
+  rebuild: true   # set false to reuse existing index
+
+models:
+  embedding: "models/embedding-001"        # Gemini embedding model
+  chat: "llama-3.3-70b-versatile"          # Groq LLaMA chat model
+
+retriever:
+  top_k: 10
+  search_type: "mmr"
+
+splitter:
+  chunk_size: 800
+  chunk_overlap: 120
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+  history_file: "logs/history.json"   # conversation history
